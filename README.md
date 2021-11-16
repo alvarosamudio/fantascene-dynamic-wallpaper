@@ -1,3 +1,27 @@
+## 2.0.1 配合自己编译的文管使用,自测稳定,不会卡桌面等情况
+由于桌面版本不断的升级,也需要不断编译桌面或者等操作来维持稳定,不然可能会存在卡死的情况,所以,从2.0.1这个版本开始将只留下幻梦动态壁纸本身的功能,提供文管的版本一起安装下载,也就是必须要安装我编译的深度文管(因为要开一个背景透明的接口,不得已),喜欢DIY桌面的朋友强烈建议使用,如果你喜欢这个软件希望你点个赞,对于开发者,有什么建议和不太清楚的地方可以联系我,通过邮箱,或者是提交issues,我都能看得到,自己编译的文管的版本都是打的8.0.1,为了防止基于现在的版本直接更新了,如果需要删除,需要手动降级各个软件包即可,如果有问题,可以联系我,请不要直接卸载,会有问题
+
+下载地址我放在了蓝奏云:
+
+deepinV20.3: [https://depend.lanzoui.com/iXwewwk7fba](https://depend.lanzoui.com/iXwewwk7fba)
+
+uos专业版amd64:[https://depend.lanzoui.com/il0Lzwk35xi](https://depend.lanzoui.com/il0Lzwk35xi)
+
+安装方法:,解压,右键进入命令行:
+
+sudo dpkg -i *
+
+可能安装的时候会提示缺少什么东西,请按照相关缺少安装
+
+其中七个包是文管,包含桌面,1个包是本身程序的,
+
+安装了这个版本的桌面,就可以使用源代码进行调试动态壁纸,以前的版本因为有问题,调试起来很困难(也就是说需要安装这个加上背景透明dbus接口的桌面才可以调试本软件)
+
+当前版本会更加流畅,支持web和视频壁纸两种
+
+官方github地址:[https://github.com/dependon/fantascene-dynamic-wallpaper](https://github.com/dependon/fantascene-dynamic-wallpaper)
+
+期待你的小星星
 
 ## If you like this toy, light the little star
 Detailed instructions will be written to wiki later
