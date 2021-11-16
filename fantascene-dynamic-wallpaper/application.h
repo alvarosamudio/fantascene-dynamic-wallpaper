@@ -31,6 +31,7 @@ public:
     const QPixmap getThumbnail(const QString &path);
 
     void setDesktopTransparent();
+    void setDesktopParent(QWidget *widget);
 
     bool setThumbnail(const QString &path);
 Q_SIGNALS:

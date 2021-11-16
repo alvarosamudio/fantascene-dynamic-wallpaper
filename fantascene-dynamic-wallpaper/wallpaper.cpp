@@ -20,6 +20,7 @@
 #include <QWebEngineView>
 #include <QDesktopWidget>
 #include <QGuiApplication>
+#include <QWindow>
 
 #include "application.h"
 
@@ -285,6 +286,16 @@ void Wallpaper::setFile(const QString &path)
         }
         updateGeometry();
     }
+    QTimer::singleShot(200, [ = ] {
+        for (auto wid : dApp->m_screenWid)
+        {
+            QWindow *window = QWindow::fromWinId(wid);
+            if (window) {
+                window->raise();
+            }
+        }
+    });
+
 //    updateGeometry();
 
 }
@@ -374,7 +385,7 @@ void Wallpaper::registerDesktop()
         dApp->m_screenWid.push_back(winId());
     }
 }
-#include <QWindow>
+
 bool Wallpaper::event(QEvent *event)
 {
     //https://github.com/dependon/fantascene-dynamic-wallpaper/issues/4，临时解决WIN+D的问题
