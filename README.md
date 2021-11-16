@@ -21,6 +21,8 @@ sudo dpkg -i *
 
 官方github地址:[https://github.com/dependon/fantascene-dynamic-wallpaper](https://github.com/dependon/fantascene-dynamic-wallpaper)
 
+中国gitee地址:[https://gitee.com/liuminghang/fantascene-dynamic-wallpaper](https://gitee.com/liuminghang/fantascene-dynamic-wallpaper)
+
 期待你的小星星
 
 ## If you like this toy, light the little star
