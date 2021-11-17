@@ -219,12 +219,12 @@ void Application::setDesktopTransparent()
         if (window != nullptr) {
             window->setOpacity(0.99);
 
-            //事件穿透
-            Region region = XCreateRegion();
-            if (region) {
-                XShapeCombineRegion(QX11Info::display(), id, ShapeInput, 0, 0, region, ShapeSet);
-                XDestroyRegion(region);
-            }
+//            //事件穿透
+//            Region region = XCreateRegion();
+//            if (region) {
+//                XShapeCombineRegion(QX11Info::display(), id, ShapeInput, 0, 0, region, YXSorted);
+//                XDestroyRegion(region);
+//            }
 
         }
         if (!m_screenWid.contains(id)) {
