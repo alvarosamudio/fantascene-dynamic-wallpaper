@@ -123,9 +123,9 @@ Wallpaper::Wallpaper(QString path, int currentScreen, QWidget *parent)
 
     setVolume(0);
 
-    m_mouseWebEventTimer = new QTimer(this);
-    connect(m_mouseWebEventTimer, SIGNAL(timeout()), this, SLOT(slotMouseEvent()));
-    m_mouseWebEventTimer->start(30);
+//    m_mouseWebEventTimer = new QTimer(this);
+//    connect(m_mouseWebEventTimer, SIGNAL(timeout()), this, SLOT(slotMouseEvent()));
+//    m_mouseWebEventTimer->start(30);
 
 }
 

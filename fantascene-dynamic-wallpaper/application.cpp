@@ -6,7 +6,11 @@
 #include <QWindow>
 #include <QCryptographicHash>
 
+#ifdef Q_OS_LINUX
 #include "setdesktop.h"
+#include <X11/extensions/shape.h>
+#include <QX11Info>
+#endif
 
 int find_pid_by_name1(char *ProcName, int *foundpid)
 {
@@ -214,6 +218,14 @@ void Application::setDesktopTransparent()
         QWindow *window = QWindow::fromWinId((unsigned long)id);
         if (window != nullptr) {
             window->setOpacity(0.99);
+
+            //事件穿透
+            Region region = XCreateRegion();
+            if (region) {
+                XShapeCombineRegion(QX11Info::display(), id, ShapeInput, 0, 0, region, ShapeSet);
+                XDestroyRegion(region);
+            }
+
         }
         if (!m_screenWid.contains(id)) {
             m_screenWid.push_back(id);
