@@ -123,9 +123,10 @@ Wallpaper::Wallpaper(QString path, int currentScreen, QWidget *parent)
 
     setVolume(0);
 
-//    m_mouseWebEventTimer = new QTimer(this);
-//    connect(m_mouseWebEventTimer, SIGNAL(timeout()), this, SLOT(slotMouseEvent()));
-//    m_mouseWebEventTimer->start(30);
+    m_mouseWebEventTimer = new QTimer(this);
+    connect(m_mouseWebEventTimer, SIGNAL(timeout()), this, SLOT(slotMouseEvent()));
+    m_mouseWebEventTimer->start(100);
+
 
 }
 
@@ -381,13 +382,15 @@ void Wallpaper::registerDesktop()
         show();
         lower();
     });
-    if (!dApp->m_screenWid.contains(winId())) {
-        dApp->m_screenWid.push_back(winId());
-    }
+//    if (!dApp->m_screenWid.contains(winId())) {
+//        dApp->m_screenWid.push_back(winId());
+//    }
+
 }
 
 bool Wallpaper::event(QEvent *event)
 {
+    qDebug() << event->type();
     //https://github.com/dependon/fantascene-dynamic-wallpaper/issues/4，临时解决WIN+D的问题
     if (event->type() == QEvent::WindowActivate) {
         qDebug() << "Video WindowActivate";
@@ -397,15 +400,6 @@ bool Wallpaper::event(QEvent *event)
                 window->raise();
             }
         }
-//        QTimer::singleShot(200, [] {
-//            for (int index = 0; index < dApp->desktop()->screenCount(); index++)
-//            {
-//                system("xdotool search --class dde-desktop windowactivate");
-//            }
-////            emit dApp->sigDesktopActive();
-//            qDebug() << "Desktop WindowActivate";
-
-//        });
     }
     return  QWidget::event(event);
 }
@@ -517,13 +511,4 @@ void Wallpaper::LeftMouseClick(QWidget *eventsReciverWidget, QPoint clickPos)
                                          Qt::MouseButton::NoButton,
                                          Qt::NoModifier);
     QCoreApplication::postEvent(eventsReciverWidget, press);
-    // Some delay
-//    QTimer::singleShot(300, [clickPos, eventsReciverWidget]() {
-//        QMouseEvent *release = new QMouseEvent(QEvent::MouseMove,
-//                                               clickPos,
-//                                               Qt::LeftButton,
-//                                               Qt::MouseButton::NoButton,
-//                                               Qt::NoModifier);
-//        QCoreApplication::postEvent(eventsReciverWidget, release);
-//    });
 }
