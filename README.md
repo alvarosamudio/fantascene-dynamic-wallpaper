@@ -29,7 +29,7 @@ sudo dpkg -i *
 Detailed instructions will be written to wiki later
 
 ## deepin linux 
-sudo apt install com.github.fantacene
+sudo apt install com.github.fantascene
 
 ## manjaro deepin linux (arch)
 
