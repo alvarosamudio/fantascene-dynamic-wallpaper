@@ -7,6 +7,8 @@ deepinV20.3: [https://depend.lanzoui.com/iXwewwk7fba](https://depend.lanzoui.com
 
 uos专业版amd64:[https://depend.lanzoui.com/il0Lzwk35xi](https://depend.lanzoui.com/il0Lzwk35xi)
 
+uos专业版arm64:[https://depend.lanzoui.com/i35HSwxevkf](https://depend.lanzoui.com/i35HSwxevkf)
+
 安装方法:,解压,右键进入命令行:
 
 sudo dpkg -i *
